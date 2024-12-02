@@ -1,0 +1,21 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Lista de Clientes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div *ngIf="loading">Cargando clientes...</div>
+  <div *ngIf="errorMessage">{{ errorMessage }}</div>
+
+  <ion-list>
+    <app-client-card
+      *ngFor="let client of clients"
+      [client]="client"
+    ></app-client-card>
+  </ion-list>
+
+  <div *ngIf="!loading && clients.length === 0">
+    No hay clientes para mostrar.
+  </div>
+</ion-content>

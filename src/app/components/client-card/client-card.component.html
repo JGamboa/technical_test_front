@@ -1,0 +1,19 @@
+<ion-card>
+  <div class="map-container">
+    <google-map
+      width="100%"
+      height="95%"
+      [center]="{ lat: client.latitude, lng: client.longitude }"
+      [zoom]="18"
+    >
+      <map-marker
+        [position]="{ lat: client.latitude, lng: client.longitude }"
+        [title]="client.name"
+      ></map-marker>
+    </google-map>
+  </div>
+  <ion-card-content>
+    <ion-card-title>{{ client.name }}</ion-card-title>
+    <p>{{ client.address }}</p>
+  </ion-card-content>
+</ion-card>
